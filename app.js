@@ -1,14 +1,14 @@
-var data = require('./data.json');
-var Highcharts = require('highcharts/highstock');
+var data = require('./data.json')
+var Highcharts = require('highcharts/highstock')
 
-var chart = Highcharts.stockChart('container', {
-	xAxis: [{
-		type: 'datetime'
-	}],
-	series: [{
-		data: data,
-		dataGrouping: {
-			approximation: 'high'
-		}
-	}]
-});
+Highcharts.stockChart('container', {
+  xAxis: [{
+    type: 'datetime'
+  }],
+  series: [{
+    data: data,
+    dataGrouping: {
+      approximation: 'high'
+    }
+  }]
+})

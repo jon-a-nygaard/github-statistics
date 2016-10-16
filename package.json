@@ -5,12 +5,16 @@
   "main": "test.js",
   "scripts": {
     "bundle": "node node_modules\\browserify\\bin\\cmd.js app.js -o bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules\\eslint\\bin\\eslint.js collectIssues.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^13.0.1",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1",
     "request": "^2.74.0"
   },
   "dependencies": {
