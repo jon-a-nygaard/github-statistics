@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 const request = require('request');
 const fs = require('fs');
-const host = 'https://api.github.com';
+const c = require('./config.json');
 const owner = 'highcharts';
 const repo = 'highcharts';
-const token = require('./config.json').token;
-let path = `/repos/${owner}/${repo}/issues?state=all&access_token=${token}`
-console.log('Authorization: ' + token)
+const host = 'https://api.github.com';
+const path = `/repos/${owner}/${repo}/issues?state=all&access_token=${c.token}`
+console.log('Authorization: ' + c.token)
 const getIsssues = (url, max, i, issues, token) => {
 	let next = '';
 	request({
@@ -44,4 +44,4 @@ const getIsssues = (url, max, i, issues, token) => {
 		}
 	})
 }
-getIsssues(host + path, null, 1, [], token);
+getIsssues(host + path, null, 1, [], c.token);
